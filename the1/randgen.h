@@ -1,7 +1,7 @@
 #ifndef _RANDGEN_H
 #define _RANDGEN_H
 
-#include <limits.h>                     // for INT_MAX
+#include <limits.h> // for INT_MAX
 #include <string>
 using namespace std;
 
@@ -12,11 +12,11 @@ using namespace std;
 //
 // RandGen() ---      constructor sets seed of random # generator
 //                    once per program, not per class/object
-//     
+//
 // RandInt(int max)
 // RandInt(int low,int max) - return random integer in range [0..max)
 //                     when one parameter used, [low..max] when
-//                     two parameters used
+//                     two parameters used.
 //
 //       examples:    rnd.RandInt(6) is random integer [0..5] or [0..6)
 //                    rnd.RandInt(3,10) is random integer [3..10]
@@ -27,17 +27,17 @@ using namespace std;
 
 class RandGen
 {
-  public:
-    RandGen();                          // set seed for all instances
-    int RandInt(int max = INT_MAX);     // returns int in [0..max)
-    int RandInt(int low, int max);      // returns int in [low..max]
-    double RandReal();                  // returns double in [0..1)
+public:
+    RandGen();                               // set seed for all instances
+    int RandInt(int max = INT_MAX);          // returns int in [0..max)
+    int RandInt(int low, int max);           // returns int in [low..max]
+    double RandReal();                       // returns double in [0..1)
     double RandReal(double low, double max); // range [low..max]
-	char RandChar(const string & s);
+    char RandChar(const string &s);
 
-    static void SetSeed(int seed);      // static (per class) seed set
+    static void SetSeed(int seed); // static (per class) seed set
 private:
-    static int ourInitialized;          // for 'per-class' initialization
+    static int ourInitialized; // for 'per-class' initialization
 };
 
 #endif

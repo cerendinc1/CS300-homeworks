@@ -1,62 +1,68 @@
 
 //
-// Ceren Dinc
+// Ceren Dinc.
 
 #include <iostream>
 #include <string>
 using namespace std;
 
-template <class Object> class Stack{
+template <class Object>
+class Stack
+{
 public:
-    Stack(){
+    Stack()
+    {
         topOfStack = NULL;
     }
-    
-    ~Stack(){
+
+    ~Stack()
+    {
         makeEmpty();
     }
-    
-    bool isEmpty() const{
+
+    bool isEmpty() const
+    {
         return topOfStack == NULL;
     }
-    
-    void makeEmpty(){
+
+    void makeEmpty()
+    {
         while (!isEmpty())
             pop();
     }
-    
-    void pop(){
-        if (!isEmpty()){
+
+    void pop()
+    {
+        if (!isEmpty())
+        {
             ListNode *oldTop = topOfStack;
             topOfStack = topOfStack->next;
             delete oldTop;
         }
     }
-    
-    void push(const Object & x){
+
+    void push(const Object &x)
+    {
         topOfStack = new ListNode(x, topOfStack);
     }
-    
-    const Object & top() const{
-        if(!isEmpty()){
+
+    const Object &top() const
+    {
+        if (!isEmpty())
+        {
             return topOfStack->element;
         }
         return topOfStack->element;
     }
-    
+
 private:
-    
-    struct ListNode{
+    struct ListNode
+    {
         Object element;
         ListNode *next;
-        ListNode(const Object & theElement, ListNode * n = NULL)
-                 : element(theElement), next(n) {}
-            
+        ListNode(const Object &theElement, ListNode *n = NULL)
+            : element(theElement), next(n) {}
     };
 
     ListNode *topOfStack;
-    
 };
-
-    
-    

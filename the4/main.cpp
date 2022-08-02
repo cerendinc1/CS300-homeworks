@@ -113,7 +113,7 @@ void quickSort(vector<Comparable> &a, int left, int right)
     }
 }
 
-// Takes median of first, last and center element.
+// Takes median of first, last and center element
 template <typename Comparable>
 Comparable &medianOfThree(vector<Comparable> &a, int left, int right)
 {
